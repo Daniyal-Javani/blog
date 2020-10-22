@@ -3,7 +3,9 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterationController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +30,5 @@ Route::post('/login', LoginController::class);
 Route::post('/verify-email', VerificationController::class);
 Route::post('/send-forgot-password', [ForgotPasswordController::class, 'sendOtp']);
 Route::post('/change-password', [ForgotPasswordController::class, 'changePassword']);
+Route::resource('/categories', CategoryController::class);
+Route::resource('/posts', PostController::class);
